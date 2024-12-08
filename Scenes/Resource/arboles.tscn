@@ -1,0 +1,271 @@
+[gd_scene load_steps=11 format=3 uid="uid://bylcikgdt7dc6"]
+
+[ext_resource type="Texture2D" uid="uid://bqiumtlkx8qnd" path="res://Background/Tree/Tree3.png" id="1_5g6va"]
+[ext_resource type="Script" path="res://Script/Arboles.gd" id="1_xge76"]
+[ext_resource type="Script" path="res://Script/Arbol.gd" id="2_auike"]
+[ext_resource type="Texture2D" uid="uid://dtjuni4v65c0l" path="res://Background/Tree/Treefullhp.png" id="3_dkort"]
+[ext_resource type="Texture2D" uid="uid://b1viwt4n125jv" path="res://Background/Tree/Arbolg1.png" id="3_i80h6"]
+[ext_resource type="Texture2D" uid="uid://bp6g5w1j4e6ca" path="res://Background/Tree/Tree2.png" id="4_502s4"]
+[ext_resource type="Texture2D" uid="uid://djtwaf4ms54d7" path="res://Background/Tree/Tree4.png" id="6_ygl47"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ptmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ygl47")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ygl47")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ygl47")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ygl47")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"1 a 0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5g6va")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5g6va")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_5g6va")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_5g6va")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"2 a 1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_502s4")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_502s4")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_502s4")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_502s4")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"3 a 2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dkort")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dkort")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dkort")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dkort")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"4 a 3",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_atn1q"]
+resource_name = "vidamenos"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4m3wc"]
+_data = {
+"vidamenos": SubResource("Animation_atn1q")
+}
+
+[node name="Arboles" type="Node2D"]
+script = ExtResource("1_xge76")
+
+[node name="Arbol1" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(25, 479)
+scale = Vector2(3, 3)
+region_rect = Rect2(7, 7, 48, 80)
+script = ExtResource("2_auike")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arbol1"]
+sprite_frames = SubResource("SpriteFrames_8ptmd")
+animation = &"4"
+
+[node name="Timer" type="Timer" parent="Arbol1/AnimatedSprite2D"]
+
+[node name="Arbol2" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(978, 506)
+scale = Vector2(3, 3)
+region_rect = Rect2(7, 7, 48, 80)
+script = ExtResource("2_auike")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arbol2"]
+sprite_frames = SubResource("SpriteFrames_8ptmd")
+animation = &"4"
+
+[node name="Timer" type="Timer" parent="Arbol2/AnimatedSprite2D"]
+
+[node name="Arbol3" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(1154, 505)
+scale = Vector2(3, 3)
+region_rect = Rect2(7, 7, 48, 80)
+script = ExtResource("2_auike")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arbol3"]
+sprite_frames = SubResource("SpriteFrames_8ptmd")
+animation = &"4"
+
+[node name="Timer" type="Timer" parent="Arbol3/AnimatedSprite2D"]
+
+[node name="Arbol4" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(492, 435)
+scale = Vector2(3, 3)
+texture = ExtResource("3_i80h6")
+region_rect = Rect2(7, 7, 48, 80)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Arbol4"]
+libraries = {
+"": SubResource("AnimationLibrary_4m3wc")
+}
+
+[connection signal="timeout" from="Arbol1/AnimatedSprite2D/Timer" to="Arbol1" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbol2/AnimatedSprite2D/Timer" to="Arbol2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbol3/AnimatedSprite2D/Timer" to="Arbol3" method="_on_timer_timeout"]

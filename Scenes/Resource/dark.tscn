@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://duyv4acus3461"]
+
+[ext_resource type="Script" path="res://Script/Dark.gd" id="1_5e8xs"]
+[ext_resource type="Texture2D" uid="uid://chawg2qy222d0" path="res://Background/Effects/Dark4.png" id="2_128ng"]
+[ext_resource type="Texture2D" uid="uid://c1hr1h6cvwy61" path="res://Background/Effects/Dark3.png" id="3_vybrf"]
+
+[node name="Dark" type="Node2D"]
+z_index = 4
+script = ExtResource("1_5e8xs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(113, 121)
+texture = ExtResource("3_vybrf")
+
+[node name="Sprite2D13" type="Sprite2D" parent="."]
+position = Vector2(360, 128)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D11" type="Sprite2D" parent="."]
+position = Vector2(1062, 241)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D12" type="Sprite2D" parent="."]
+position = Vector2(955, 534)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(875, 136)
+texture = ExtResource("3_vybrf")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(613, 322)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D8" type="Sprite2D" parent="."]
+position = Vector2(686, 525)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D9" type="Sprite2D" parent="."]
+position = Vector2(444, 530)
+texture = ExtResource("3_vybrf")
+
+[node name="Sprite2D10" type="Sprite2D" parent="."]
+position = Vector2(857, 331)
+texture = ExtResource("3_vybrf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(606, 129)
+texture = ExtResource("3_vybrf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(374, 341)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(173, 525)
+texture = ExtResource("2_128ng")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(82, 347)
+texture = ExtResource("3_vybrf")

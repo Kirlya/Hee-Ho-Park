@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dbqliyjh6xsyg"]
+
+[ext_resource type="FontFile" uid="uid://c3i2jvgba5fec" path="res://Scenes/Resource/ShantellSans.ttf" id="1_nxlob"]
+
+[resource]
+resource_local_to_scene = true
+default_font = ExtResource("1_nxlob")
+default_font_size = 24

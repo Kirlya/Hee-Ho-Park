@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bawgxnerfo143"]
+
+[ext_resource type="Texture2D" uid="uid://bolgwrs6bue74" path="res://Background/Clouds/Could_png.png" id="1_5sl7n"]
+[ext_resource type="Script" path="res://Script/Nube.gd" id="2_6a54q"]
+
+[node name="Nubes" type="Node2D"]
+z_index = -6
+
+[node name="Nube1" type="Sprite2D" parent="."]
+position = Vector2(499, 134)
+scale = Vector2(0.514009, 0.575)
+texture = ExtResource("1_5sl7n")
+region_enabled = true
+region_rect = Rect2(992, 656, 464, 240)
+script = ExtResource("2_6a54q")
+
+[node name="Nube2" type="Sprite2D" parent="."]
+position = Vector2(796, 306)
+scale = Vector2(0.525, 0.424242)
+texture = ExtResource("1_5sl7n")
+region_enabled = true
+region_rect = Rect2(1504, 1080, 440, 264)
+script = ExtResource("2_6a54q")
+
+[node name="Nube3" type="Sprite2D" parent="."]
+position = Vector2(221, 211)
+scale = Vector2(0.525, 0.424242)
+texture = ExtResource("1_5sl7n")
+region_enabled = true
+region_rect = Rect2(456, 200, 480, 280)
+script = ExtResource("2_6a54q")
+
+[node name="Nube4" type="Sprite2D" parent="."]
+position = Vector2(898, 112)
+scale = Vector2(0.525, 0.424242)
+texture = ExtResource("1_5sl7n")
+region_enabled = true
+region_rect = Rect2(544, 664, 376, 208)
+script = ExtResource("2_6a54q")

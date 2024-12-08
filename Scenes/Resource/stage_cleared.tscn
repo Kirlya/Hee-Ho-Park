@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://c703ni48nd2wr"]
+
+[ext_resource type="Script" path="res://Script/stage_cleared.gd" id="1_da6dl"]
+[ext_resource type="Texture2D" uid="uid://chagxe4qo5e04" path="res://Background/Scenes/forest.jpg" id="2_rycqr"]
+
+[sub_resource type="Theme" id="Theme_5i1fh"]
+default_font_size = 22
+
+[node name="Stage_cleared" type="Node2D"]
+script = ExtResource("1_da6dl")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(577, 321.75)
+scale = Vector2(1.57065, 1.31939)
+texture = ExtResource("2_rycqr")
+
+[node name="ScoreText" type="Label" parent="ParallaxBackground/Sprite2D"]
+offset_left = 56.0277
+offset_top = -21.7904
+offset_right = 116.028
+offset_bottom = 17.2096
+theme_override_font_sizes/font_size = 22
+text = "1000"
+
+[node name="ComboText" type="Label" parent="ParallaxBackground/Sprite2D"]
+offset_left = 54.1177
+offset_top = -88.4879
+offset_right = 109.118
+offset_bottom = -54.4879
+theme = SubResource("Theme_5i1fh")
+text = "1000"
+
+[node name="Nivel" type="Label" parent="ParallaxBackground/Sprite2D"]
+offset_left = -96.7752
+offset_top = -190.808
+offset_right = 83.2248
+offset_bottom = -115.808
+theme_override_font_sizes/font_size = 52
+text = "Nivel 5"
+
+[node name="Combo" type="Label" parent="ParallaxBackground/Sprite2D"]
+offset_left = -162.99
+offset_top = -93.7933
+offset_right = -48.9899
+offset_bottom = -48.7933
+theme_override_font_sizes/font_size = 30
+text = "Combo:"
+
+[node name="Score" type="Label" parent="ParallaxBackground/Sprite2D"]
+offset_left = -159.17
+offset_top = -24.8221
+offset_right = -61.1698
+offset_bottom = 20.1779
+theme_override_font_sizes/font_size = 30
+text = "Score:"

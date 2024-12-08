@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://dkbbjrbsid8xv"]
+
+[ext_resource type="Script" path="res://Script/level_1.gd" id="1_nyib2"]
+[ext_resource type="PackedScene" uid="uid://cqebw7ltagrwj" path="res://Scenes/Resource/background.tscn" id="1_urgpk"]
+[ext_resource type="PackedScene" uid="uid://caws4swsuph64" path="res://Scenes/Resource/jack_frost.tscn" id="2_fwmae"]
+[ext_resource type="PackedScene" uid="uid://cnce6a8qioihk" path="res://Scenes/Resource/mind.tscn" id="4_bf8l1"]
+[ext_resource type="AudioStream" uid="uid://byotrlvf5kowi" path="res://BGM/26_bell1.wav" id="5_ykl1t"]
+[ext_resource type="AudioStream" uid="uid://sjvlbjy8jlja" path="res://BGM/Forest_Sage.mp3" id="6_04jv4"]
+[ext_resource type="Script" path="res://Script/Player.gd" id="7_62of3"]
+[ext_resource type="Script" path="res://Script/NoteGenerator.gd" id="8_ophn1"]
+[ext_resource type="Texture2D" uid="uid://baru0oh0o40st" path="res://Sprite/Note/circle_note.png" id="9_50k0o"]
+[ext_resource type="Texture2D" uid="uid://bilcx14nx6o0u" path="res://Sprite/Note/cross_note.png" id="10_reyj1"]
+[ext_resource type="Texture2D" uid="uid://dogciq81jmb61" path="res://Sprite/Note/square_note.png" id="11_x3nmw"]
+[ext_resource type="Texture2D" uid="uid://dlx6ya0pnlum0" path="res://Sprite/Note/triangle_note.png" id="12_aa6y5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4t1c"]
+size = Vector2(94.25, 50.25)
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_nyib2")
+
+[node name="Background" parent="." instance=ExtResource("1_urgpk")]
+
+[node name="JackFrost" parent="." instance=ExtResource("2_fwmae")]
+
+[node name="HitCircle" type="Area2D" parent="."]
+position = Vector2(250, 224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitCircle"]
+shape = SubResource("RectangleShape2D_v4t1c")
+
+[node name="HitCross" type="Area2D" parent="."]
+position = Vector2(250, 164)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitCross"]
+shape = SubResource("RectangleShape2D_v4t1c")
+
+[node name="HitSquare" type="Area2D" parent="."]
+position = Vector2(250, 104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitSquare"]
+shape = SubResource("RectangleShape2D_v4t1c")
+
+[node name="HitTriangle" type="Area2D" parent="."]
+position = Vector2(250, 44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitTriangle"]
+shape = SubResource("RectangleShape2D_v4t1c")
+
+[node name="Mind" parent="." instance=ExtResource("4_bf8l1")]
+position = Vector2(65, 67)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ykl1t")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_04jv4")
+autoplay = true
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("7_62of3")
+
+[node name="NoteGenerator" type="Node2D" parent="."]
+position = Vector2(1205, 104)
+script = ExtResource("8_ophn1")
+
+[node name="Timer" type="Timer" parent="NoteGenerator"]
+autostart = true
+
+[node name="CircleNote" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1207, 48)
+texture = ExtResource("9_50k0o")
+
+[node name="CrossNote" type="Sprite2D" parent="."]
+position = Vector2(1206, 107)
+texture = ExtResource("10_reyj1")
+
+[node name="SquareNote" type="Sprite2D" parent="."]
+position = Vector2(1205, 167)
+texture = ExtResource("11_x3nmw")
+
+[node name="TriangleNote" type="Sprite2D" parent="."]
+position = Vector2(1205, 225)
+texture = ExtResource("12_aa6y5")
+
+[connection signal="body_exited" from="HitSquare" to="NoteGenerator" method="_on_hit_square_body_exited"]
+[connection signal="timeout" from="NoteGenerator/Timer" to="NoteGenerator" method="_on_timer_timeout"]

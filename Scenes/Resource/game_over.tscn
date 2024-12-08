@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=3 uid="uid://bcdh1sn4qtsm5"]
+
+[ext_resource type="Texture2D" uid="uid://y0emnv2br6ur" path="res://Sprite/JackFrost/Anim/jackfroststar35x40+8.png" id="1_6udh1"]
+[ext_resource type="Script" path="res://Script/game_over.gd" id="1_s34k0"]
+[ext_resource type="Theme" uid="uid://dbqliyjh6xsyg" path="res://Resource/new_theme.tres" id="2_60wkm"]
+[ext_resource type="AudioStream" uid="uid://cbpv84nvg36gb" path="res://BGM/Peritune_Nook_Nights.mp3" id="4_l4dci"]
+[ext_resource type="Texture2D" uid="uid://epv72rorf0o5" path="res://Tilemap/heart3.jpg" id="5_7iy57"]
+
+[sub_resource type="SystemFont" id="SystemFont_idg2f"]
+
+[sub_resource type="FontVariation" id="FontVariation_mymk1"]
+base_font = SubResource("SystemFont_idg2f")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d08vv"]
+font = SubResource("FontVariation_mymk1")
+font_size = 37
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reosq"]
+atlas = ExtResource("1_6udh1")
+region = Rect2(0, 0, 35, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1sok"]
+atlas = ExtResource("1_6udh1")
+region = Rect2(43, 0, 35, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nupmr"]
+atlas = ExtResource("1_6udh1")
+region = Rect2(86, 0, 35, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4xf6"]
+atlas = ExtResource("1_6udh1")
+region = Rect2(129, 0, 35, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwa05"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reosq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1sok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nupmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4xf6")
+}],
+"loop": true,
+"name": &"GameOver",
+"speed": 6.0
+}]
+
+[sub_resource type="Theme" id="Theme_a1qm8"]
+default_font_size = 28
+
+[sub_resource type="Theme" id="Theme_k3our"]
+default_font_size = 28
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_s34k0")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground"]
+offset_right = 1150.0
+offset_bottom = 650.0
+color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[node name="Label" type="Label" parent="ParallaxBackground"]
+offset_left = 478.0
+offset_top = 380.0
+offset_right = 678.0
+offset_bottom = 434.0
+theme = ExtResource("2_60wkm")
+text = "Continuar?
+"
+label_settings = SubResource("LabelSettings_d08vv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(585, 232)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uwa05")
+animation = &"GameOver"
+frame_progress = 0.604574
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_l4dci")
+volume_db = -10.0
+autoplay = true
+
+[node name="Corazones" type="Sprite2D" parent="."]
+position = Vector2(151, 71)
+scale = Vector2(0.2, 0.213)
+texture = ExtResource("5_7iy57")
+
+[node name="SiButton" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 480.0
+offset_right = 548.0
+offset_bottom = 525.0
+theme = SubResource("Theme_a1qm8")
+text = "Si"
+
+[node name="NoButton" type="Button" parent="."]
+offset_left = 608.0
+offset_top = 480.0
+offset_right = 708.0
+offset_bottom = 525.0
+theme = SubResource("Theme_k3our")
+text = "No
+"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="SiButton" to="." method="_on_si_button_pressed"]
+[connection signal="pressed" from="NoButton" to="." method="_on_no_button_pressed"]

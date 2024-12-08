@@ -1,0 +1,300 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxus57hljbe3p"]
+
+[ext_resource type="Script" path="res://Script/Flores.gd" id="1_6rum6"]
+[ext_resource type="Texture2D" uid="uid://pt8ft767ypik" path="res://Background/Tree/Flores1.png" id="1_hg2lg"]
+[ext_resource type="Script" path="res://Script/Flor.gd" id="2_yapl1"]
+[ext_resource type="Texture2D" uid="uid://b8ohqs4noy264" path="res://Background/Tree/Flores3.png" id="3_uce67"]
+[ext_resource type="Texture2D" uid="uid://ckpnuo0yv4d52" path="res://Background/Tree/Flores2.png" id="4_vpse0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yllwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hg2lg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hg2lg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_hg2lg")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"desaparecer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"muerta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hg2lg")
+}],
+"loop": true,
+"name": &"viva",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwpsr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uce67")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uce67")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uce67")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"desaparecer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"muerta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uce67")
+}],
+"loop": true,
+"name": &"viva",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbjjb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vpse0")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vpse0")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vpse0")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"desaparecer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"muerta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vpse0")
+}],
+"loop": true,
+"name": &"viva",
+"speed": 5.0
+}]
+
+[node name="Flores" type="Node2D"]
+script = ExtResource("1_6rum6")
+
+[node name="Flor" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(376, 568)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yllwa")
+animation = &"viva"
+frame_progress = 0.332316
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor"]
+
+[node name="Flor2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(456, 576)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yllwa")
+animation = &"viva"
+frame_progress = 0.258603
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor2"]
+
+[node name="Flor3" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(592, 568)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yllwa")
+animation = &"viva"
+frame_progress = 0.258603
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor3"]
+
+[node name="Flor4" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(640, 592)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yllwa")
+animation = &"viva"
+frame_progress = 0.258603
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor4"]
+
+[node name="Flor5" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(560, 544)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cwpsr")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor5"]
+
+[node name="Flor6" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(520, 576)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cwpsr")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor6"]
+
+[node name="Flor7" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(416, 536)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cwpsr")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor7"]
+
+[node name="Flor8" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(328, 584)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cwpsr")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor8"]
+
+[node name="Flor9" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(264, 592)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pbjjb")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor9"]
+
+[node name="Flor10" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(864, 600)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pbjjb")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor10"]
+
+[node name="Flor11" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(1032, 592)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_pbjjb")
+animation = &"desaparecer"
+script = ExtResource("2_yapl1")
+
+[node name="Timer" type="Timer" parent="Flor11"]
+
+[connection signal="timeout" from="Flor/Timer" to="Flor" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor2/Timer" to="Flor2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor3/Timer" to="Flor3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor4/Timer" to="Flor4" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor5/Timer" to="Flor5" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor6/Timer" to="Flor6" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor7/Timer" to="Flor7" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor8/Timer" to="Flor8" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor9/Timer" to="Flor9" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor10/Timer" to="Flor10" method="_on_timer_timeout"]
+[connection signal="timeout" from="Flor11/Timer" to="Flor11" method="_on_timer_timeout"]

@@ -1,0 +1,188 @@
+[gd_scene load_steps=8 format=3 uid="uid://dufjy7dhrsmis"]
+
+[ext_resource type="Texture2D" uid="uid://b0vhg1q7wdpne" path="res://Background/Tree/Arbusto3.png" id="1_qsls1"]
+[ext_resource type="Script" path="res://Script/Arbustos.gd" id="1_wvp3x"]
+[ext_resource type="Script" path="res://Script/Arbusto.gd" id="2_lldx0"]
+[ext_resource type="Texture2D" uid="uid://b1sj10l8bjae5" path="res://Background/Tree/Arbusto2.png" id="3_cdkf6"]
+[ext_resource type="Texture2D" uid="uid://cm2e2oacysdno" path="res://Background/Tree/Arbusto1.png" id="4_ti3p2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ny8pi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qsls1")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qsls1")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_qsls1")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"desaparecer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"muerta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qsls1")
+}],
+"loop": true,
+"name": &"viva",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nugmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cdkf6")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ti3p2")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ti3p2")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"desaparecer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"muerta",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cdkf6")
+}],
+"loop": true,
+"name": &"viva",
+"speed": 5.0
+}]
+
+[node name="Arbustos" type="Node2D"]
+script = ExtResource("1_wvp3x")
+
+[node name="Arbusto" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(96, 568)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ny8pi")
+animation = &"desaparecer"
+script = ExtResource("2_lldx0")
+
+[node name="Timer" type="Timer" parent="Arbusto"]
+
+[node name="Arbusto2" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(200, 568)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ny8pi")
+animation = &"desaparecer"
+script = ExtResource("2_lldx0")
+
+[node name="Timer" type="Timer" parent="Arbusto2"]
+
+[node name="Arbusto3" type="AnimatedSprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(752, 584)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ny8pi")
+animation = &"desaparecer"
+script = ExtResource("2_lldx0")
+
+[node name="Timer" type="Timer" parent="Arbusto3"]
+
+[node name="Arbusto4" type="AnimatedSprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(696, 592)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nugmq")
+animation = &"desaparecer"
+frame_progress = 0.150638
+script = ExtResource("2_lldx0")
+
+[node name="Timer" type="Timer" parent="Arbusto4"]
+
+[node name="Arbusto5" type="AnimatedSprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(808, 592)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nugmq")
+animation = &"desaparecer"
+frame_progress = 0.150638
+script = ExtResource("2_lldx0")
+
+[node name="Timer" type="Timer" parent="Arbusto5"]
+
+[node name="Arbusto6" type="AnimatedSprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+position = Vector2(1096, 584)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nugmq")
+animation = &"desaparecer"
+frame_progress = 0.150638
+script = ExtResource("2_lldx0")
+
+[node name="Timer" type="Timer" parent="Arbusto6"]
+
+[connection signal="timeout" from="Arbusto/Timer" to="Arbusto" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbusto2/Timer" to="Arbusto2" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbusto3/Timer" to="Arbusto3" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbusto4/Timer" to="Arbusto4" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbusto5/Timer" to="Arbusto5" method="_on_timer_timeout"]
+[connection signal="timeout" from="Arbusto6/Timer" to="Arbusto6" method="_on_timer_timeout"]
