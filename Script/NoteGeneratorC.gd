@@ -23,9 +23,7 @@ func _on_timer_timeout():
 
 func _on_hit_circle_body_exited(body):
 	if(!notas.is_empty()):
+		print("hola")
 		notaOut.emit()
 		body.queue_free()
 		notas.remove_at(notas.size()-1)
-
-
-

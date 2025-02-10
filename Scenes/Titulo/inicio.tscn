@@ -1,0 +1,103 @@
+[gd_scene load_steps=4 format=3 uid="uid://c27p1wsldas40"]
+
+[ext_resource type="Texture2D" uid="uid://uv0sfpayfjx2" path="res://Scenes/Titulo/WithTitle.png" id="1_ubjqx"]
+[ext_resource type="Theme" uid="uid://cd5jjhodg3385" path="res://Resource/Fuente.tres" id="2_1jnpe"]
+[ext_resource type="FontFile" uid="uid://de515o1tjyewv" path="res://Resource/ByteBounce.ttf" id="3_br40f"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="WithTitle" type="Sprite2D" parent="."]
+position = Vector2(575.75, 323.75)
+scale = Vector2(0.60026, 0.600463)
+texture = ExtResource("1_ubjqx")
+
+[node name="MenuBar" type="MenuBar" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -112.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="MenuBar"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.0
+offset_top = -46.0
+offset_right = -166.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1jnpe")
+theme_override_colors/icon_focus_color = Color(0.733333, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.580433, 0.152147, 0.763485, 1)
+theme_override_colors/icon_hover_pressed_color = Color(8.18223e-07, 0.484543, 0.106585, 1)
+theme_override_fonts/font = ExtResource("3_br40f")
+theme_override_font_sizes/font_size = 30
+text = "Iniciar Juego"
+
+[node name="Button2" type="Button" parent="MenuBar"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -46.0
+offset_right = 84.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_br40f")
+theme_override_font_sizes/font_size = 30
+text = "Cargar Juego"
+
+[node name="Button3" type="Button" parent="MenuBar"]
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 174.0
+offset_top = -46.0
+offset_right = 334.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_br40f")
+theme_override_font_sizes/font_size = 30
+text = "Configuracion"
+
+[node name="Button4" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 375.0
+offset_top = 60.0
+offset_right = 535.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("3_br40f")
+theme_override_font_sizes/font_size = 30
+text = "Controles"
+
+[node name="Button5" type="Button" parent="MenuBar"]
+layout_mode = 0
+offset_left = 625.0
+offset_top = 60.0
+offset_right = 785.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("3_br40f")
+theme_override_font_sizes/font_size = 30
+text = "Salir"

@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cd5jjhodg3385"]
+
+[ext_resource type="FontFile" uid="uid://de515o1tjyewv" path="res://Resource/ByteBounce.ttf" id="1_f2dmr"]
+
+[resource]
+default_font = ExtResource("1_f2dmr")
+default_font_size = 30
+/fonts/Fuente = ExtResource("1_f2dmr")
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 30
+TabBar/fonts/font = ExtResource("1_f2dmr")

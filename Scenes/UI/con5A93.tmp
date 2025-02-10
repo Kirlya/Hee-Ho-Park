@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://dolymooee3ugg"]
+
+[ext_resource type="Theme" uid="uid://cd5jjhodg3385" path="res://Resource/Fuente.tres" id="1_7xwc4"]
+[ext_resource type="Script" path="res://Scenes/UI/controls_ui.gd" id="1_w4q8c"]
+[ext_resource type="FontFile" uid="uid://de515o1tjyewv" path="res://Resource/ByteBounce.ttf" id="1_xx1im"]
+[ext_resource type="Texture2D" uid="uid://bv1pdk3j2xk5x" path="res://Scenes/Titulo/Front.png" id="3_hcehl"]
+
+[node name="Controls_UI" type="Control"]
+self_modulate = Color(0.129558, 0.129558, 0.129558, 1)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme = ExtResource("1_7xwc4")
+script = ExtResource("1_w4q8c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hcehl")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+physics_interpolation_mode = 1
+self_modulate = Color(0.162066, 0.162066, 0.162066, 1)
+z_index = 1
+texture_repeat = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.5
+offset_right = 20.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 38
+alignment = 1
+
+[node name="Triangle" type="RichTextLabel" parent="Panel/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(256, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Square" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(256, 58)
+layout_mode = 2
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content = true
+
+[node name="Circle" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(256, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+fit_content = true
+
+[node name="Cross" type="RichTextLabel" parent="Panel/VBoxContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(256, 58)
+layout_mode = 2
+size_flags_horizontal = 4
+bbcode_enabled = true
+fit_content = true
+
+[node name="Button" type="Button" parent="Panel"]
+texture_filter = 1
+use_parent_material = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.844064
+anchor_top = 0.11767
+anchor_right = 0.930001
+anchor_bottom = 0.185571
+offset_left = 65.4514
+offset_top = -82.716
+offset_right = 65.4514
+offset_bottom = -82.716
+grow_horizontal = 0
+theme = ExtResource("1_7xwc4")
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_xx1im")
+theme_override_font_sizes/font_size = 30
+text = "Atras
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_button_button_down"]

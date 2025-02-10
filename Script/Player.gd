@@ -15,6 +15,7 @@ signal subirVida
 signal bandera
 signal reducirBackground
 
+
 #probar un atributo boolean que empieze con verdadero y luego que la tecla se presione pase
 #a falso y se vuelva verdadero una vez la tecla se suelte
 #problema a futuro con notas dobles
@@ -22,7 +23,7 @@ signal reducirBackground
 
 
 func _ready():
-	areas = [$"../HitTriangle",$"../HitSquare",$"../HitCross",$"../HitCircle"]
+	areas = [$"../Node2D/HitTriangle",$"../Node2D/HitSquare",$"../Node2D/HitCross",$"../Node2D/HitCircle"]
 	colisionarea = -1
 	puntos = 0
 	combo = 0
@@ -45,16 +46,20 @@ func _input(event):
 					_verificarNota(2,event)
 				if(event.is_action_pressed("ui_circle")):
 					_verificarNota(3,event)
-		if(event.is_action_pressed("ui_text_completion_accept")):
-			get_tree().paused = true
+		if(event.is_action_pressed("pause")):
+			get_tree().paused = !get_tree().paused
 			$"../Popup".popup()
 			
 
 #verificar mas notas en el area no la primera
 
 func _verificarNota(n,event):
-	if(_hayColision(n)):
-		var nota = areas[n].get_overlapping_bodies()[0]
+	var nota
+	print(areas[n].has_overlapping_bodies())
+	if(_hayColision(n) and areas[n].get_overlapping_bodies().size()>0):
+		#error en nivel 5 con joystick
+		nota = areas[n].get_overlapping_bodies()[0]
+		
 		if(nota.notaCorrecta(event)):
 			combo = combo + 1
 			comboFl = comboFl + 1

@@ -13,6 +13,6 @@ func _process(_delta):
 
 
 func _on_window_input(event):
-	if(event.is_action_pressed("ui_text_completion_accept")):
+	if(event.is_action_pressed("pause")):
 			hide()
 			get_tree().paused = false

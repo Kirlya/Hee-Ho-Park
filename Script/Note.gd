@@ -8,7 +8,8 @@ var rect = RectangleShape2D.new()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	z_index = 10
-	speed= 3000
+	#speed 3000
+	speed = 50
 	dir = Vector2(-1,0)
 	#collision_layer = 2
 	collision_mask = 1
@@ -32,7 +33,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	#impulso va aumentando la velocidad
-	apply_central_force(dir*speed*delta)
+	apply_central_force(dir*speed)
 	
 func _destroy():
 	queue_free()

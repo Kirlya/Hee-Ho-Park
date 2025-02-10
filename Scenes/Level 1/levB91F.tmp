@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://culdsrdoorlvn" path="res://Tilemap/Pausa.png" id="31_1ffo1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4t1c"]
-size = Vector2(57.25, 43)
+size = Vector2(89.5625, 50.25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eetou"]
 animations = [{
@@ -294,33 +294,31 @@ script = ExtResource("1_nyib2")
 [node name="JackFrost" parent="." instance=ExtResource("2_fwmae")]
 z_index = 10
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="HitCircle" type="Area2D" parent="Node2D"]
+[node name="HitCircle" type="Area2D" parent="."]
 position = Vector2(220, 224)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/HitCircle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitCircle"]
 shape = SubResource("RectangleShape2D_v4t1c")
 debug_color = Color(0.964706, 0, 0.498039, 0.419608)
 
-[node name="HitCross" type="Area2D" parent="Node2D"]
+[node name="HitCross" type="Area2D" parent="."]
 position = Vector2(220, 164)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/HitCross"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitCross"]
 shape = SubResource("RectangleShape2D_v4t1c")
 debug_color = Color(0, 0.396078, 0.984314, 0.419608)
 
-[node name="HitSquare" type="Area2D" parent="Node2D"]
+[node name="HitSquare" type="Area2D" parent="."]
 position = Vector2(220, 104)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/HitSquare"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitSquare"]
 shape = SubResource("RectangleShape2D_v4t1c")
 debug_color = Color(0.898039, 0, 0.768627, 0.419608)
 
-[node name="HitTriangle" type="Area2D" parent="Node2D"]
+[node name="HitTriangle" type="Area2D" parent="."]
 position = Vector2(220, 44)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/HitTriangle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitTriangle"]
 shape = SubResource("RectangleShape2D_v4t1c")
 debug_color = Color(0, 0.631373, 0.458824, 0.419608)
 
@@ -401,7 +399,6 @@ texture = ExtResource("2_p82ck")
 [node name="Flores" parent="Background" instance=ExtResource("16_kc3d7")]
 
 [node name="Nubes" parent="Background" instance=ExtResource("6_trtye")]
-visible = false
 
 [node name="TileMap" type="TileMap" parent="Background"]
 tile_set = SubResource("TileSet_myfdc")
@@ -409,10 +406,10 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2359296, 65536, 0, 2359298, 65536, 0, 2359300, 327680, 3, 2490374, 65536, 0, 2490376, 65536, 0, 2490378, 65536, 0, 2490380, 65536, 0, 2490382, 65536, 0, 2490384, 65536, 0, 2359314, 393216, 3, 2359316, 65536, 0, 2359318, 65536, 0, 2228248, 393216, 3, 2228250, 65536, 0, 2228252, 65536, 0, 2228254, 65536, 0, 2228256, 65536, 0, 2228258, 65536, 0, 2228260, 327680, 3, 2359334, 327680, 3, 2490408, 65536, 0, 2490410, 65536, 0, 2490412, 65536, 0, 2490414, 65536, 0, 2490416, 65536, 0, 2490418, 65536, 0, 2490420, 65536, 0, 2490422, 65536, 0, 2490424, 65536, 0, 2490426, 65536, 0, 2490428, 65536, 0, 2490430, 65536, 0, 2490432, 65536, 0, 2490434, 65536, 0, 2490436, 65536, 0, 2490438, 65536, 0, 2490440, 65536, 0, 2490372, 327680, 4, 2490386, 393216, 4, 2359320, 393216, 4, 2490406, 327680, 4, 2359332, 327680, 4, 2621440, 0, 1, 2621442, 65536, 1, 2621444, 131072, 1, 2621446, 196608, 1, 2621448, 262144, 1, 2621450, 0, 1, 2621452, 65536, 1, 2621454, 131072, 1, 2621456, 196608, 1, 2621458, 196608, 1, 2621460, 196608, 1, 2359322, 262144, 5, 2359324, 262144, 5, 2359326, 262144, 5, 2359328, 262144, 5, 2359330, 262144, 5, 2490404, 262144, 5, 2490402, 262144, 5, 2490400, 262144, 5, 2490398, 262144, 5, 2490396, 262144, 5, 2490388, 262144, 5, 2490390, 262144, 5, 2490392, 262144, 5, 2490394, 262144, 5, 2490368, 262144, 5, 2490370, 262144, 5, 2621462, 196608, 1, 2621464, 196608, 1, 2621466, 262144, 1, 2621468, 0, 1, 2621470, 65536, 1, 2621472, 131072, 1, 2621474, 131072, 1, 2621476, 0, 1, 2621478, 65536, 1, 2621480, 65536, 1, 2621482, 65536, 1, 2621484, 131072, 1, 2621486, 131072, 1, 2621488, 131072, 1, 2621490, 131072, 1, 2621492, 0, 1, 2621494, 196608, 1, 2621496, 65536, 1, 2621498, 131072, 1, 2621500, 131072, 1, 2621502, 0, 1, 2621504, 0, 1, 2621506, 131072, 1, 2621508, 131072, 1, 2621510, 131072, 1, 2621512, 131072, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 187.0
-offset_top = 7.0
-offset_right = 253.0
-offset_bottom = 261.0
+offset_left = 175.0
+offset_top = 13.0
+offset_right = 267.0
+offset_bottom = 254.0
 color = Color(0.0588235, 0.509804, 1, 0.619608)
 
 [node name="Popup" type="Popup" parent="."]
@@ -434,10 +431,10 @@ offset_top = 250.0
 offset_right = 590.0
 offset_bottom = 350.0
 
-[connection signal="body_exited" from="Node2D/HitCircle" to="NoteGeneratorC" method="_on_hit_circle_body_exited"]
-[connection signal="body_exited" from="Node2D/HitCross" to="NoteGeneratorX" method="_on_hit_cross_body_exited"]
-[connection signal="body_exited" from="Node2D/HitSquare" to="NoteGeneratorS" method="_on_hit_square_body_exited"]
-[connection signal="body_exited" from="Node2D/HitTriangle" to="NoteGeneratorT" method="_on_hit_triangle_body_exited"]
+[connection signal="body_exited" from="HitCircle" to="NoteGeneratorC" method="_on_hit_circle_body_exited"]
+[connection signal="body_exited" from="HitCross" to="NoteGeneratorX" method="_on_hit_cross_body_exited"]
+[connection signal="body_exited" from="HitSquare" to="NoteGeneratorS" method="_on_hit_square_body_exited"]
+[connection signal="body_exited" from="HitTriangle" to="NoteGeneratorT" method="_on_hit_triangle_body_exited"]
 [connection signal="timeout" from="Mind/Mind/AnimatedSprite2D/Timer" to="Mind/Mind" method="_on_timer_timeout"]
 [connection signal="finished" from="AudioStreamPlayer2D2" to="Mind/Mind" method="_on_audio_stream_player_2d_2_finished"]
 [connection signal="bajarVida" from="Player" to="Mind/Mind" method="_on_player_bajar_vida"]

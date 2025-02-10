@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6s5icdke7cyh"]
+
+[ext_resource type="Script" path="res://Scenes/UI/menu.gd" id="1_evw3m"]
+[ext_resource type="Texture2D" uid="uid://bn22f2kg55tax" path="res://WithTitle.png" id="1_k6v7n"]
+[ext_resource type="FontFile" uid="uid://de515o1tjyewv" path="res://Resource/ByteBounce.ttf" id="2_dxe2x"]
+[ext_resource type="PackedScene" uid="uid://dolymooee3ugg" path="res://Scenes/UI/controls_ui.tscn" id="4_hp8xn"]
+
+[node name="Control" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evw3m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_k6v7n")
+expand_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 128
+alignment = 1
+
+[node name="Iniciar_Button" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 35)
+layout_mode = 2
+theme_override_constants/h_separation = 128
+theme_override_fonts/font = ExtResource("2_dxe2x")
+theme_override_font_sizes/font_size = 30
+text = "Iniciar Juego"
+
+[node name="Cargar_Button" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxe2x")
+theme_override_font_sizes/font_size = 30
+text = "Cargar Juego"
+
+[node name="Config_Button" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxe2x")
+theme_override_font_sizes/font_size = 30
+text = "Configuracion"
+
+[node name="HSeparator" type="HSeparator" parent="BoxContainer/VBoxContainer"]
+z_index = -1
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 128
+
+[node name="Controles_Button" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxe2x")
+theme_override_font_sizes/font_size = 30
+text = "Controles"
+
+[node name="Salir_Button" type="Button" parent="BoxContainer/VBoxContainer/HBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(160, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dxe2x")
+theme_override_font_sizes/font_size = 30
+text = "Salir"
+
+[node name="HSeparator2" type="HSeparator" parent="BoxContainer/VBoxContainer"]
+z_index = -1
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Controls_UI" parent="." instance=ExtResource("4_hp8xn")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer/Iniciar_Button" to="." method="_on_iniciar_button_button_down"]
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer/Cargar_Button" to="." method="_on_cargar_button_button_down"]
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer/Config_Button" to="." method="_on_config_button_button_down"]
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer2/Controles_Button" to="." method="_on_controles_button_button_down"]
+[connection signal="button_down" from="BoxContainer/VBoxContainer/HBoxContainer2/Salir_Button" to="." method="_on_salir_button_button_down"]

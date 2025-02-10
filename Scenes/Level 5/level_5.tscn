@@ -243,16 +243,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8bsp1"]
-size = Vector2(89.5625, 50.25)
+size = Vector2(57.25, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drfrn"]
-size = Vector2(89.5625, 50.25)
+size = Vector2(57.25, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7aql0"]
-size = Vector2(89.5625, 50.25)
+size = Vector2(57.25, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi756"]
-size = Vector2(89.5625, 50.25)
+size = Vector2(57.25, 43)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sgpyf"]
 animations = [{
@@ -687,11 +687,10 @@ offset_right = 590.0
 offset_bottom = 350.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = 175.0
+offset_left = 187.0
 offset_top = 13.0
-offset_right = 267.0
-offset_bottom = 254.0
+offset_right = 253.0
+offset_bottom = 267.0
 color = Color(0.0588235, 0.509804, 1, 0.619608)
 
 [node name="BlackFrost" type="Node2D" parent="."]

@@ -1,0 +1,195 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtdsw4fo4st3a"]
+
+[ext_resource type="Theme" uid="uid://cd5jjhodg3385" path="res://Resource/Fuente.tres" id="1_3bsmk"]
+[ext_resource type="Texture2D" uid="uid://bv1pdk3j2xk5x" path="res://Scenes/Titulo/Front.png" id="2_sa3wu"]
+[ext_resource type="FontFile" uid="uid://de515o1tjyewv" path="res://Resource/ByteBounce.ttf" id="3_u85jk"]
+
+[node name="config_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sa3wu")
+expand_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Configuracion"
+metadata/_edit_use_anchors_ = true
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Audio" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+theme = ExtResource("1_3bsmk")
+theme_override_fonts/font = ExtResource("3_u85jk")
+theme_override_font_sizes/font_size = 30
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Audio/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volumen General"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.7
+value = 60.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Audio/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_constants/table_v_separation = 0
+text = "     60"
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/Audio/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Audio/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volumen Musica"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.7
+value = 60.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Audio/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_constants/table_v_separation = 0
+text = "     60"
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/Audio/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HSeparator3" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Audio/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Volumen Efectos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="TabContainer/Audio/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.7
+value = 60.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Audio/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+theme_override_constants/table_v_separation = 0
+text = "     60"
+
+[node name="VSeparator" type="VSeparator" parent="TabContainer/Audio/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HSeparator4" type="HSeparator" parent="TabContainer/Audio/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Graficos" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Graficos"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabBar" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("1_3bsmk")
+theme_override_fonts/font = ExtResource("3_u85jk")
+metadata/_tab_index = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/TabBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
